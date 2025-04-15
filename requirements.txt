@@ -1,0 +1,13 @@
+langchain
+tiktoken
+langchain_huggingface
+pymupdf
+flask
+pdfplumber
+flask-cors
+pymupdf4llm
+langchain-groq
+langchain-google-genai
+scikit-learn
+deep-translator
+python-dotenv
