@@ -8,12 +8,13 @@ import os
 # from langchain.chat_models import init_chat_model
 
 
-
-load_dotenv()
+reduce_llm = ChatGroq(model_name="llama3-8b-8192")
+google_api_key = os.getenv("GOOGLE_API_KEY")
 
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-flash",
+    google_api_key=google_api_key,
     temperature=0,
     max_tokens=None,
     timeout=None,
@@ -76,7 +77,7 @@ VERBOSE SUMMARY:
     """
     combine_prompt_template = PromptTemplate(template=combine_prompt, input_variables=["text"])
 
-    reduce_llm = ChatGroq(model_name="llama3-8b-8192")
+
     reduce_chain = load_summarize_chain(llm=reduce_llm,
                              chain_type="stuff",
                              prompt=combine_prompt_template,
