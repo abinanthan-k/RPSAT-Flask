@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, redirect, url_for, session
 from flask_cors import CORS
+import os
 import time
 from services.parser import extract_text_from_pdf, split_into_chunks
 from services.chain import split_summaries, prepare_final_summary
@@ -45,4 +46,5 @@ def summarize():
     return redirect(url_for('result'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host='0.0.0.0', port=port)
