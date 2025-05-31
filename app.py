@@ -8,8 +8,6 @@ from services.closest import return_closest_indices
 from services.translator import translate_text
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
-CORS(app)
-app.secret_key = 'your-secret-key'  # Needed for session
 
 @app.route('/')
 def index():
@@ -45,6 +43,6 @@ def summarize():
 
     return redirect(url_for('result'))
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 8000))
-    app.run(host='0.0.0.0', port=port)
+# if __name__ == '__main__':
+#     port = int(os.environ.get('PORT', 8000))
+#     app.run(host='0.0.0.0', port=port)
