@@ -11,3 +11,4 @@ langchain-google-genai
 scikit-learn
 deep-translator
 python-dotenv
+Gunicorn
