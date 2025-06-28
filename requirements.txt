@@ -12,3 +12,4 @@ scikit-learn
 deep-translator
 python-dotenv
 Gunicorn
+sentence_transformers
